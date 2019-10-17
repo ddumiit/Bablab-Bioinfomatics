@@ -1,0 +1,129 @@
+  adding: home/ddumit/corals2/ASS_DIR/D19-7806/fastg/k119.fastg (deflated 71%)
+  adding: home/ddumit/corals2/ASS_DIR/D19-7806/fastg/k141.fastg (deflated 71%)
+  adding: home/ddumit/corals2/ASS_DIR/D19-7806/fastg/k21.fastg (deflated 74%)
+  adding: home/ddumit/corals2/ASS_DIR/D19-7806/fastg/k29.fastg (deflated 76%)
+  adding: home/ddumit/corals2/ASS_DIR/D19-7806/fastg/k39.fastg (deflated 74%)
+  adding: home/ddumit/corals2/ASS_DIR/D19-7806/fastg/k59.fastg (deflated 71%)
+  adding: home/ddumit/corals2/ASS_DIR/D19-7806/fastg/k79.fastg (deflated 71%)
+  adding: home/ddumit/corals2/ASS_DIR/D19-7806/fastg/k99.fastg (deflated 71%)
+MaxBin 2.2.7
+Thread: 2
+Input contig: /home/ddumit/corals2/ASS_DIR/D19-7806/final.contigs.fa
+Located reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806_1_paired.fastq.00.0_0.cor.fastq.gz]
+Located reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806_2_paired.fastq.00.0_0.cor.fastq.gz]
+Located reads file [/home/ddumit/corals2/BH_files/D19-7806/single1/corrected/D19-7806_1_single.fastq.00.0_0.cor.fastq.gz]
+Located reads file [/home/ddumit/corals2/BH_files/D19-7806/single2/corrected/D19-7806_2_single.fastq.00.0_0.cor.fastq.gz]
+Located reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806__unpaired.00.0_0.cor.fastq.gz]
+out header: /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins
+Running Bowtie2 on reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806_1_paired.fastq.00.0_0.cor.fastq.gz]...this may take a while...
+Reading SAM file to estimate abundance values...
+Running Bowtie2 on reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806_2_paired.fastq.00.0_0.cor.fastq.gz]...this may take a while...
+Reading SAM file to estimate abundance values...
+Running Bowtie2 on reads file [/home/ddumit/corals2/BH_files/D19-7806/single1/corrected/D19-7806_1_single.fastq.00.0_0.cor.fastq.gz]...this may take a while...
+Reading SAM file to estimate abundance values...
+Running Bowtie2 on reads file [/home/ddumit/corals2/BH_files/D19-7806/single2/corrected/D19-7806_2_single.fastq.00.0_0.cor.fastq.gz]...this may take a while...
+Reading SAM file to estimate abundance values...
+Running Bowtie2 on reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806__unpaired.00.0_0.cor.fastq.gz]...this may take a while...
+Reading SAM file to estimate abundance values...
+Searching against 107 marker genes to find starting seed contigs for [/home/ddumit/corals2/ASS_DIR/D19-7806/final.contigs.fa]...
+Running FragGeneScan....
+Running HMMER hmmsearch....
+Try harder to dig out marker genes from contigs.
+Done data collection. Running MaxBin...
+Command: /home/ddumit/Software/MaxBin-2.2.7/src/MaxBin -fasta /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.contig.tmp  -abund /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.contig.tmp.reads.abund1 -abund2 /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.contig.tmp.reads.abund2 -abund3 /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.contig.tmp.reads.abund3 -abund4 /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.contig.tmp.reads.abund4 -abund5 /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.contig.tmp.reads.abund5 -seed /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.seed -out /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins -min_contig_length 1000 -thread 2
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	k141_58 [24.938994] [23.670870] [8.184989] [0.016069] [0.020996]
+	k141_109 [26.296854] [24.982241] [8.544115] [0.021564] [0.017525]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:01
+
+bins.001.marker.fasta
+bins.002.marker.fasta
+Deleting intermediate files.
+
+
+========== Job finished ==========
+Yielded 2 bins for contig (scaffold) file /home/ddumit/corals2/ASS_DIR/D19-7806/final.contigs.fa
+
+Here are the output files for this run.
+Please refer to the README file for further details.
+
+Summary file: /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.summary
+Genome abundance info file: /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.abundance
+Marker counts: /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.marker
+Marker genes for each bin: /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.marker_of_each_gene.tar.gz
+Bin files: /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.001.fasta - /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.002.fasta
+Unbinned sequences: /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.noclass
+
+Store abundance information of reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806_1_paired.fastq.00.0_0.cor.fastq.gz] in [/home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.abund1].
+Store abundance information of reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806_2_paired.fastq.00.0_0.cor.fastq.gz] in [/home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.abund2].
+Store abundance information of reads file [/home/ddumit/corals2/BH_files/D19-7806/single1/corrected/D19-7806_1_single.fastq.00.0_0.cor.fastq.gz] in [/home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.abund3].
+Store abundance information of reads file [/home/ddumit/corals2/BH_files/D19-7806/single2/corrected/D19-7806_2_single.fastq.00.0_0.cor.fastq.gz] in [/home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.abund4].
+Store abundance information of reads file [/home/ddumit/corals2/BH_files/D19-7806/paired/corrected/D19-7806__unpaired.00.0_0.cor.fastq.gz] in [/home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/bins.abund5].
+
+
+========== Elapsed Time ==========
+0 hours 6 minutes and 50 seconds.
+
+[2019-10-15 15:55:22] INFO: CheckM v1.0.18
+[2019-10-15 15:55:22] INFO: checkm lineage_wf -x fasta /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/checkm
+[2019-10-15 15:55:22] INFO: [CheckM - tree] Placing bins in reference genome tree.
+[2019-10-15 15:55:22] INFO: Identifying marker genes in 2 bins with 1 threads:
+[2019-10-15 15:55:50] INFO: Saving HMM info to file.
+[2019-10-15 15:55:50] INFO: Calculating genome statistics for 2 bins with 1 threads:
+[2019-10-15 15:55:50] INFO: Extracting marker genes to align.
+[2019-10-15 15:55:50] INFO: Parsing HMM hits to marker genes:
+[2019-10-15 15:55:51] INFO: Extracting 43 HMMs with 1 threads:
+[2019-10-15 15:55:51] INFO: Aligning 43 marker genes with 1 threads:
+[2019-10-15 15:55:54] INFO: Reading marker alignment files.
+[2019-10-15 15:55:54] INFO: Concatenating alignments.
+[2019-10-15 15:55:54] INFO: Placing 2 bins into the genome tree with pplacer (be patient).
+[2019-10-15 16:01:40] INFO: { Current stage: 0:06:17.400 || Total: 0:06:17.400 }
+[2019-10-15 16:01:40] INFO: [CheckM - lineage_set] Inferring lineage-specific marker sets.
+[2019-10-15 16:01:40] INFO: Reading HMM info from file.
+[2019-10-15 16:01:40] INFO: Parsing HMM hits to marker genes:
+[2019-10-15 16:01:40] INFO: Determining marker sets for each genome bin.
+[2019-10-15 16:01:41] INFO: Marker set written to: /home/ddumit/corals2/ASS_DIR/D19-7806/maxbin/checkm/lineage.ms
+[2019-10-15 16:01:41] INFO: { Current stage: 0:00:01.610 || Total: 0:06:19.010 }
+[2019-10-15 16:01:41] INFO: [CheckM - analyze] Identifying marker genes in bins.
+[2019-10-15 16:01:42] INFO: Identifying marker genes in 2 bins with 1 threads:
+[2019-10-15 16:05:05] INFO: Saving HMM info to file.
+[2019-10-15 16:05:06] INFO: { Current stage: 0:03:24.456 || Total: 0:09:43.466 }
+[2019-10-15 16:05:06] INFO: Parsing HMM hits to marker genes:
+[2019-10-15 16:05:07] INFO: Aligning marker genes with multiple hits in a single bin:
+[2019-10-15 16:05:07] INFO: { Current stage: 0:00:01.082 || Total: 0:09:44.549 }
+[2019-10-15 16:05:07] INFO: Calculating genome statistics for 2 bins with 1 threads:
+[2019-10-15 16:05:07] INFO: { Current stage: 0:00:00.316 || Total: 0:09:44.866 }
+[2019-10-15 16:05:07] INFO: [CheckM - qa] Tabulating genome statistics.
+[2019-10-15 16:05:07] INFO: Calculating AAI between multi-copy marker genes.
+[2019-10-15 16:05:07] INFO: Reading HMM info from file.
+[2019-10-15 16:05:08] INFO: Parsing HMM hits to marker genes:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Bin Id           Marker lineage        # genomes   # markers   # marker sets    0     1    2   3   4   5+   Completeness   Contamination   Strain heterogeneity  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  bins.002   f__Vibrionaceae (UID4865)       80         922           367        354   567   1   0   0   0       62.13            0.03               0.00          
+  bins.001      k__Bacteria (UID203)        5449        104            58         88    16   0   0   0   0       25.86            0.00               0.00          
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[2019-10-15 16:05:09] INFO: { Current stage: 0:00:01.636 || Total: 0:09:46.502 }

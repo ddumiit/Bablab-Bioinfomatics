@@ -1,0 +1,14 @@
+1009.0Gb memory in total.
+Using: 908.548Gb.
+MEGAHIT v1.1.3
+--- [Tue Oct 15 15:23:13 2019] Start assembly. Number of CPU threads 2 ---
+--- [Tue Oct 15 15:23:13 2019] Available memory: 1083939721216, used: 975545749094
+--- [Tue Oct 15 15:23:13 2019] Converting reads to binaries ---
+    [read_lib_functions-inl.h  : 209]     Lib 0 (/home/ddumit/corals2/BH_files/D19-7807/paired/corrected/D19-7807_1_paired.fastq.00.0_0.cor.fastq.gz,/home/ddumit/corals2/BH_files/D19-7807/paired/corrected/D19-7807_2_paired.fastq.00.0_0.cor.fastq.gz): pe, 952252 reads, 300 max length
+    [read_lib_functions-inl.h  : 209]     Lib 1 (/home/ddumit/corals2/BH_files/D19-7807/single1/corrected/D19-7807_1_single.fastq.00.0_0.cor.fastq.gz): se, 146283 reads, 300 max length
+    [read_lib_functions-inl.h  : 209]     Lib 2 (/home/ddumit/corals2/BH_files/D19-7807/single2/corrected/D19-7807_2_single.fastq.00.0_0.cor.fastq.gz): se, 451 reads, 300 max length
+    [read_lib_functions-inl.h  : 209]     Lib 3 (/home/ddumit/corals2/BH_files/D19-7807/paired/corrected/D19-7807__unpaired.00.0_0.cor.fastq.gz): se, 468 reads, 300 max length
+    [utils.h                   : 126]     Real: 7.2925	user: 2.2807	sys: 0.2520	maxrss: 80836
+--- [Tue Oct 15 15:23:22 2019] k list: 21,29,39,59,79,99,119,141 ---
+--- [Tue Oct 15 15:23:23 2019] Extracting solid (k+1)-mers for k = 21 ---
+slurmstepd: error: *** JOB 24618473 ON node341 CANCELLED AT 2019-10-15T15:23:36 ***
