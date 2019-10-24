@@ -1,0 +1,76 @@
+#Pipeline for Sequence Manipulation and Tree-Building
+
+
+#General text file manipulation for fasta files
+
+#Get only sequence IDs from HMM hits 
+grep -o "WP_.*.1 " nirK_threshold.txt >nirK_IDs.txt
+
+#Count number of IDs in files (replace WP with correct sequence identifier, ex NR)
+grep -E -o -i -c 'WP*’ Desktop/norC_trimming/norC_trimmed.fa
+
+#get headers only from a fasta file
+grep "^>" unicorn.fa > unicorn-headers.txt
+
+#get everything inside brackets (for bracketed species names)
+grep -o -E "\[([^]]+)\]" nirS_match.txt > nirS_match_names.txt 
+
+#get IDs from list where IDs are the first column
+awk -F ' ' '{print $1}' nirS_match.txt >nirS_match_IDs.txt
+
+#element-wise concatenation of two columns, keeping orders of both
+paste nirS_match_IDs.txt nirS_match_names.txt > nirS_match_IDs_names.txt
+
+#removes the > from lines
+sed 's/\>//' nirS_match_IDs_names.txt > nirS_match_IDs_names2.txt
+
+#gets unique names between two files (non-shared genes) in this case nos not nir
+awk 'NR==FNR{a[$0];next}!($0 in a)' nir_unique.txt nosZ_trimming/clean_nosZ_names_unique.txt > nir_nos_unique.txt
+
+#gets shared names between two files (shared genes)
+awk 'NR==FNR{a[$0];next} ($0 in a)' nosZ_trimming/clean_nosZ_names_unique.txt nir_unique.txt > nir_nos_shared.txt 
+
+#remove duplicated species/IDs from file
+awk '!seen[$0]++' denite_unique_species.txt 
+
+#get only IDs from list of trimmed IDs
+sed 's/\/.*//' norC_trimmed_NJ_tree.newick_trimmed_list_RTL_0.95 >norC_trimmed_NJ_tree.newick_trimmed_list_RTL_0.95_IDs
+
+#matches nirS trimmed list to nirS headers from fasta file 
+#filters all nirS headers by only taxa/IDs present in trimmed list
+grep -F -f nirS_NJ_tree.newick_trimmed_list_RTL_0.95 clean_nirS-headers.txt>nirS_match.txt
+
+
+
+
+#Alignments and Tree-building
+
+#uses seqtk to search an input (refseq_all.faa) based on list of IDs (nirS_IDs.txt) and writes matching sequences to an output fasta file (nirS_out.faa)
+seqtk subseq refseq_all.faa nirS_IDs.txt > nirS_out.faa
+
+#Align with MAFFT:
+mafft norC_out_refseq_hits.faa > norC_out_MAFFT.faa
+
+#Align with MUSCLE (best done on cluster):
+/Users/irene/Desktop/muscle -in norC_trimmed_new.fa -out norC_trimmed_MUSCLE.fa
+
+#clean duplicate sequences from files with seqkit
+cat fasta.fa | seqkit rmdup -s -i -o clean.fa -d duplicated.fa -D duplicated.detail.txt
+
+#creates a Maximum Likelihood tree with RAxML
+raxmlHPC-SSE3 -f a -# 20 -m PROTGAMMAAUTO -p 12345 -x 12345 -s clean_norC_MUSCLE.fa -n clean_norC_ML_tree.tree
+
+#creates a Neighbor-Joining tree with Ninja
+/Users/irene/Desktop/ninja_1.2.2/ninja ninja_1.2.2/norC_trimmed_MUSCLE.fa > norC_trimmed_NJ_tree.newick
+
+#uses Treemer to make a plot of your sequence diversity over trimming threshold
+python /Users/irene/Desktop/Treemmer-master/Treemmer_v0.3.py nosZ_NJ_tree.newick 
+
+#uses Treemer to trim tree, retaining 95% diversity and stepping by 2
+#produces a trimmed newick tree file and list of trimmed IDs
+python /Users/irene/Desktop/Treemmer-master/Treemmer_v0.3.py nosZ_NJ_tree.newick -RTL 0.95 -r 2
+
+
+
+
+
